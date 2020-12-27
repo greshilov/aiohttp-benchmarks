@@ -4,7 +4,7 @@
 ## Usage
 
 ```shell
-virtualenv -p `which python3.6` env
+virtualenv -p `which python3` env
 . env/bin/activate
 pip install requests
 ```
@@ -13,7 +13,6 @@ pip install requests
 
 ```shell
 vagrant up
-vagrant ssh -c /vagrant/remote-setup/setup.sh
 python run.py
 python process.py
 ```
@@ -31,7 +30,7 @@ scp -i benchmarks.pem -r remote-setup $SSH_ADDRESS:
 ssh -i benchmarks.pem $SSH_ADDRESS remote-setup/setup.sh
 
 # everything should now be setup, you can run the server
-ssh -i benchmarks.pem $SSH_ADDRESS "sudo ~/env35/bin/python server.py"
+ssh -i benchmarks.pem $SSH_ADDRESS "sudo ~/env38/bin/python server.py"
 # now open $HTTP_ADDRESS/plaintext in your browser and check the server is working.
 
 python run.py
